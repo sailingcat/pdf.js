@@ -426,7 +426,9 @@ class TextWidgetAnnotationElement extends WidgetAnnotationElement {
         element.type = 'text';
         element.setAttribute('value', this.data.fieldValue);
       }
-
+      if (this.data.fieldName) {
+        element.classList.add(this.data.fieldName, 'pdfjs-annotation-text-ele');
+      }
       element.disabled = this.data.readOnly;
 
       if (this.data.maxLen !== null) {
